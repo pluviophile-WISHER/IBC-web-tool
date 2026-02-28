@@ -191,7 +191,8 @@ def Home_file():
 
         with col2: 
             # 读取Excel文件
-            file_path1 = r'IBC_data\Breast_cancer_20-23.xlsx' 
+            current_dir = Path(__file__).parent
+            file_path1 = current_dir / "IBC_data" / "Breast_cancer_20-23.xlsx"
             df = pd.read_excel(file_path1,  engine='openpyxl')
             
             # 提取性别列 
@@ -232,6 +233,7 @@ def Home_file():
 # 调用函数以运行页面
 if __name__ == "__main__":
     Home_file()
+
 
 
 
