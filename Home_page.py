@@ -59,7 +59,8 @@ def Home_file():
 
     with col1:
         # 绘制临床诊断饼状图
-        file_path = r'IBC_data\Breast_cancer_20-23.xlsx'
+        current_dir = Path(__file__).parent
+        file_path = current_dir / "IBC_data" / "Breast_cancer_20-23.xlsx"
         df = pd.read_excel(file_path)
         
         diagnosis_counts = df['Clinical diagnosis'].value_counts()
@@ -228,5 +229,6 @@ def Home_file():
 # 调用函数以运行页面
 if __name__ == "__main__":
     Home_file()
+
 
 
