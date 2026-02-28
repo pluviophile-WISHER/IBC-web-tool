@@ -59,7 +59,7 @@ def Home_file():
 
     with col1:
         # 绘制临床诊断饼状图
-        file_path = r'E:\2025年科研\3月29日-乳腺癌\7-前端界面py\乳腺癌数据\(乳腺癌)页面展示表\Breast_cancer_20-23.xlsx'
+        file_path = r'IBC_data\Breast_cancer_20-23.xlsx'
         df = pd.read_excel(file_path)
         
         diagnosis_counts = df['Clinical diagnosis'].value_counts()
@@ -228,3 +228,4 @@ def Home_file():
 # 调用函数以运行页面
 if __name__ == "__main__":
     Home_file()
+
