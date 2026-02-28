@@ -230,8 +230,12 @@ def Add_patients_file():
             result = "Breast cancer (Positive)" if prediction[0] == 1 else "Breast cancer (Negative)"
     
             # 假设表格文件名为table1.csv和table2.csv
-            df1 = pd.read_excel(r'E:\2025年科研\3月29日-乳腺癌\7-前端界面py\乳腺癌数据\乳腺癌9.xlsx')
-            df2 = pd.read_excel(r'E:\2025年科研\3月29日-乳腺癌\7-前端界面py\乳腺癌数据\(乳腺癌)页面展示表\Breast_cancer_20-23.xlsx')
+            current_dir = Path(__file__).parent
+            df1_path = current_dir / "IBC_data" / "乳腺癌9.xlsx"
+            df1 = pd.read_excel(df1_path)
+            current_dir = Path(__file__).parent
+            df2_path = current_dir / "IBC_data" / "Breast_cancer_20-23.xlsx"
+            df2 = pd.read_excel(df2_path)
     
             # 使用merge函数将两个表格按照CA15-3和WBC列合并
             merged_df = pd.merge(df1, df2, on=['CA15-3', 'WBC', 'Lymph#'], how='inner')
@@ -291,4 +295,5 @@ def Add_patients_file():
 
 
         
+
         
