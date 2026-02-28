@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Aug 29 11:48:45 2024
-
-@author: 13162
+Add_patients_interface.py
 """
 
 import streamlit as st
@@ -298,4 +296,5 @@ def Add_patients_file():
         
 
         
+
 
