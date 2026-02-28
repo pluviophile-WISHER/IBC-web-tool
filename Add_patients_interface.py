@@ -214,7 +214,8 @@ def Add_patients_file():
             st.write(df.to_html(classes='dataframe', index=False, escape=False), unsafe_allow_html=True)
     
         # 加载模型
-        model_path = r'E:\2025年科研\3月29日-乳腺癌\3-模型保存\XGBoost_model.joblib'
+        current_dir = Path(__file__).parent
+        model_path = current_dir / "IBC_data" / "XGBoost_model.joblib"
         model = load(model_path)
     
         # 添加一些空行以分隔表格和按钮
@@ -297,3 +298,4 @@ def Add_patients_file():
         
 
         
+
