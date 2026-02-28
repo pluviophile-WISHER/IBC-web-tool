@@ -87,7 +87,8 @@ def Home_file():
 
     with col2:
         # 读取Excel文件
-        file_path2 = r'IBC_data\Breast_cancer_20-23.xlsx'  # 请确保路径正确
+        current_dir = Path(__file__).parent
+        file_path2 = current_dir / "IBC_data" / "Breast_cancer_20-23.xlsx"
         df = pd.read_excel(file_path2, engine='openpyxl')
         
         # 对 Patient Type 列进行分类
@@ -123,7 +124,8 @@ def Home_file():
 
     with col3:
         # 读取Excel文件
-        file_path3 = r'IBC_data\Breast_cancer_20-23.xlsx'  # 请确保路径正确
+        current_dir = Path(__file__).parent
+        file_path3 = current_dir / "IBC_data" / "Breast_cancer_20-23.xlsx"
         df = pd.read_excel(file_path3, engine='openpyxl')
 
         # 提取Age列，进行处理
@@ -229,6 +231,7 @@ def Home_file():
 # 调用函数以运行页面
 if __name__ == "__main__":
     Home_file()
+
 
 
 
