@@ -29,11 +29,12 @@ def User_file():
     tab1 = st.tabs(["📑 total"])
     # tab1, tab2, tab3 = st.tabs(["&#128214; total", "&#128451; male", "&#128209; female"])
     current_dir = Path(__file__).parent
-    data_total = current_dir / "IBC_data" / "Breast_cancer_20-23.xlsx" 
+    path_total = current_dir / "IBC_data" / "Breast_cancer_20-23.xlsx" 
     data_total = pd.read_excel(path_total)
     # 假设要格式化的列名为 'Date'
     data_total['Date'] = data_total['Date'].apply(lambda x: '{:.0f}'.format(x))
     # 使用 dataframe() 方法显示，并指定宽度和高度
     tab1[0].dataframe(data_total, width=1400, height=710)
+
 
 
